@@ -1,3 +1,4 @@
+
 // index.js - Punto de entrada principal
 
 require('dotenv').config();
@@ -19,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 // Rutas API
 const apiRoutes = require('./routes/api');
-app.use('/api/users', apiRoutes);
+app.use('/api', apiRoutes); // ✅ Rutas corregidas
 
 // Página principal
 app.get('/', (req, res) => {
